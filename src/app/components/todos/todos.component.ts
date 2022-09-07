@@ -8,20 +8,22 @@ import { Todo } from './../../models/Todo';
 })
 export class TodosComponent implements OnInit {
 
-  title = 'Title';
-  todos = [
-    {
-      content: 'First Todo',
-      completed: 'false'
-    },
-    {
-      content: 'Second Todo',
-      completed: 'true'
-    },
-  ];
+  title:string = 'Title';
+  todos:Todo[];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.todos = [
+      {
+        content: "First todo",
+        completed: false
+      },
+      {
+        content: "Second todo",
+        completed: true
+      }
+    ]
   }
 
 }
