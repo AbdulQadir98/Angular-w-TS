@@ -21,7 +21,12 @@
 	flex: 1 1 100%;
 }
 
+.todo .content:hover {
+	cursor: pointer;
+}
+
 .todo.done .content {
+	color: rgb(255, 0, 64);
 	text-decoration: line-through;
 }
 

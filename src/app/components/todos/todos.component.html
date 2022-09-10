@@ -1,8 +1,23 @@
 <div class="todos">
     {{ title }}
-    <div class="todo" *ngFor=" let todo of todos; let i = index;">
+
+    <form (submit)="addTodo()">
+        <input 
+            type="text" 
+            name="inputNote" 
+            placeholder="Enter Note..." 
+            class="todo-input"
+            [(ngModel)]="inputNote"
+        />
+        <input type="submit" value="Add Note" class="todo-submit">
+    </form>
+    
+    <div *ngFor=" let todo of todos; let i = index;" 
+          class="todo {{(todo.completed) ? 'done' : '' }}" 
+    >
         <div class="id">{{ i }}</div>
-        <div class="content">{{ todo.content }}</div>
-        <button class="delete"></button>
+        <div class="content" (click)="toggleDone(i)">{{ todo.content }}</div>
+        <button class="delete" (click)="deleteTodo(i)">Remove</button>
     </div>
+
 </div>
